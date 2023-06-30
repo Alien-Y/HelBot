@@ -1,0 +1,21 @@
+{% extends 'main.html' %} {% block content %}
+<main class="auth layout">
+  <div class="container">
+    <div class="layout__box">
+      <div class="layout__boxHeader">
+        <div class="layout__boxTitle">
+          <h3>HelBot Answer:</h3>
+        </div>
+      </div>
+      <div class="layout__body">
+        <form class="form" action="" method="POST">
+          {% csrf_token %} 
+          <div class="form__group form__group">
+            <p>{{ answer }}</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}
