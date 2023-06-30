@@ -2,7 +2,7 @@ import json
 import random
 import pickle
 import numpy as np
-from tensorflow import keras
+import keras
 from sklearn.preprocessing import LabelEncoder
 
 
@@ -27,7 +27,7 @@ max_len = 20
 
 def response(question):
 
-    result = model.predict(keras.preprocessing.sequence.pad_sequences(tokenizer.texts_to_sequences([question]),
+    result = model.predict(keras.utils.data_utils.pad_sequences(tokenizer.texts_to_sequences([question]),
                                             truncating='post', maxlen=max_len))
     
     tag = lbl_encoder.inverse_transform([np.argmax(result)])
